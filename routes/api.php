@@ -42,6 +42,7 @@ use App\Http\Controllers\SurveyPageSettingController;
 use App\Http\Controllers\ExecutiveReportController;
 use App\Http\Controllers\FeedbackOverviewReportController;
 use App\Http\Controllers\SentimentAnalysisReportController;
+use App\Http\Controllers\EmotionAnalysisReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -503,6 +504,9 @@ Route::middleware(['auth:api'])->group(function () {
 
         // 12. Sentiment Analysis Report (V2 UI Analytics)
         Route::get('/sentiment-analysis-report', [SentimentAnalysisReportController::class, 'getSentimentAnalysisReport']);
+
+        // 13. Emotion Analysis Report (V2 UI Analytics)
+        Route::get('/emotion-analysis-report', [EmotionAnalysisReportController::class, 'getEmotionAnalysisReport']);
     });
 
     // ============================================================================
