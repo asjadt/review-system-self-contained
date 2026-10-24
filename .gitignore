@@ -4,6 +4,8 @@
 /public/storage
 /storage/*.key
 /vendor
+.env
+.env.*
 !.env.example
 .env.backup
 .phpunit.result.cache
@@ -15,4 +17,4 @@ yarn-error.log
 /.idea
 *.zip
 firebase.json
-config.bat
+/.vscode
