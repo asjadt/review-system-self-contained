@@ -44,6 +44,7 @@ use App\Http\Controllers\FeedbackOverviewReportController;
 use App\Http\Controllers\SentimentAnalysisReportController;
 use App\Http\Controllers\EmotionAnalysisReportController;
 use App\Http\Controllers\RatingSatisfactionReportController;
+use App\Http\Controllers\NegativeFeedbackReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -511,6 +512,9 @@ Route::middleware(['auth:api'])->group(function () {
 
         // 14. Rating & Satisfaction Report (V2 UI Analytics)
         Route::get('/rating-satisfaction-report', [RatingSatisfactionReportController::class, 'getRatingSatisfactionReport']);
+
+        // 15. Negative Feedback Report (V2 UI Analytics)
+        Route::get('/negative-feedback-report', [NegativeFeedbackReportController::class, 'getNegativeFeedbackReport']);
     });
 
     // ============================================================================
