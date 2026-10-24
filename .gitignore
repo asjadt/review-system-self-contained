@@ -3,6 +3,8 @@
 /public/storage
 /storage/*.key
 /vendor
+.env
+.env.*
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml
@@ -13,4 +15,4 @@ yarn-error.log
 /.idea
 *.zip
 firebase.json
-config.bat
+/.vscode
