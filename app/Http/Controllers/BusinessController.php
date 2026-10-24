@@ -516,6 +516,7 @@ class BusinessController extends Controller
      *             @OA\Property(property="is_branch", type="boolean", example=true, description="Business has branches"),
      *             @OA\Property(property="has_rule_management", type="boolean", example=false, description="Enable rule management"),
      *             @OA\Property(property="is_treat_manager_as_staff", type="boolean", example=false, description="Enable rule management"),
+     *             @OA\Property(property="is_sidebar_hidden", type="boolean", example=false, description="Hide or collapse the sidebar navigation"),
      *             @OA\Property(property="header_image", type="string", example="/header_image/default.png", description="Header image path"),
      *             @OA\Property(property="rating_page_image", type="string", example="/rating_page/default.png", description="Rating page background image"),
      *             @OA\Property(property="placeholder_image", type="string", example="/placeholder/default.png", description="Placeholder image"),

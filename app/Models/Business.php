@@ -100,6 +100,7 @@ class Business extends Model
         'step_no',
         'rolling_ai_insight',
         'is_show_public_page_to_customer',
+        'is_sidebar_hidden',
     ];
 
     protected $casts = [
@@ -109,6 +110,7 @@ class Business extends Model
         'last_recommendation_at' => 'datetime',
         'rolling_ai_insight' => 'array',
         'is_show_public_page_to_customer' => 'boolean',
+        'is_sidebar_hidden' => 'boolean',
     ];
 
     protected $hidden = [
