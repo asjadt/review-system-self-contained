@@ -164,6 +164,11 @@ class ReviewNew extends Model
         return $this->hasOne(Business::class, 'id', 'business_id');
     }
 
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class, 'branch_id');
+    }
+
     public function staff()
     {
         return $this->hasOne(User::class, 'id', 'staff_id');
