@@ -1,0 +1,9 @@
+# Default owners
+*                   @asjadt @nazm-engineer @devnazmul @rifat3232
+
+# Protected configuration & CI/CD files
+/.gitignore         @asjadt @nazm-engineer @devnazmul @rifat3232
+/.github/           @asjadt @nazm-engineer @devnazmul @rifat3232
+/.vscode/           @asjadt @nazm-engineer @devnazmul @rifat3232
+/package.json       @asjadt @nazm-engineer @devnazmul @rifat3232
+/package-lock.json  @asjadt @nazm-engineer @devnazmul @rifat3232
