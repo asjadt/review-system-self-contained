@@ -45,6 +45,7 @@ use App\Http\Controllers\SentimentAnalysisReportController;
 use App\Http\Controllers\EmotionAnalysisReportController;
 use App\Http\Controllers\RatingSatisfactionReportController;
 use App\Http\Controllers\NegativeFeedbackReportController;
+use App\Http\Controllers\VoiceIntelligenceReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -515,6 +516,9 @@ Route::middleware(['auth:api'])->group(function () {
 
         // 15. Negative Feedback Report (V2 UI Analytics)
         Route::get('/negative-feedback-report', [NegativeFeedbackReportController::class, 'getNegativeFeedbackReport']);
+
+        // 16. Voice Feedback Intelligence Report (V2 UI Analytics)
+        Route::get('/voice-intelligence-report', [VoiceIntelligenceReportController::class, 'getVoiceIntelligenceReport']);
     });
 
     // ============================================================================
