@@ -425,17 +425,18 @@ class NegativeFeedbackReportService
             ->whereBetween('r.created_at', [$startDate, $endDate])
             ->whereIn('r.sentiment_label', ['negative', 'very_negative'])
             ->select([
-                'u.name as staff_name',
+                DB::raw("TRIM(CONCAT(COALESCE(u.first_Name, ''), ' ', COALESCE(u.last_Name, ''))) as staff_name"),
                 DB::raw('COUNT(r.id) as count'),
             ])
-            ->groupBy('u.id', 'u.name')
+            ->groupBy('u.id', 'u.first_Name', 'u.last_Name')
             ->orderByRaw('COUNT(r.id) DESC')
             ->take(2)
             ->get();
 
         foreach ($staffComplaints as $sc) {
+            $sName = !empty($sc->staff_name) ? $sc->staff_name : 'Staff Member';
             $results[] = [
-                'entity' => $sc->staff_name . ' (Staff)',
+                'entity' => $sName . ' (Staff)',
                 'count'  => (int) $sc->count,
                 'type'   => 'Staff',
             ];
@@ -595,7 +596,8 @@ class NegativeFeedbackReportService
         $items = [];
         foreach ($reviews as $r) {
             $branchName = $r->branch->name ?? 'General Branch';
-            $staffName = $r->staff->name ?? 'Unassigned';
+            $staffName = $r->staff ? trim(($r->staff->first_Name ?? '') . ' ' . ($r->staff->last_Name ?? '')) : 'Unassigned';
+            if (empty($staffName)) $staffName = 'Unassigned';
             $issueName = $categoriesMap[$r->id] ?? ($r->summary ?? 'Service Inattention');
 
             $items[] = [
